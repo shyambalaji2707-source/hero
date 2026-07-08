@@ -1,1 +1,121 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+  .card {
+    background: #fff;
+    padding: 40px 36px;
+    border-radius: 14px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+    width: 100%;
+    max-width: 360px;
+    text-align: center;
+  }
+  .card h1 { font-size: 22px; color: #333; margin-bottom: 6px; }
+  .card p { font-size: 13px; color: #888; margin-bottom: 24px; }
+  .field { text-align: left; margin-bottom: 16px; }
+  .field label { display: block; font-size: 13px; color: #555; margin-bottom: 6px; }
+  .field input {
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color .2s;
+  }
+  .field input:focus { border-color: #764ba2; }
+  .login-btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity .2s;
+  }
+  .login-btn:hover { opacity: 0.9; }
+  .error-msg { color: #e74c3c; font-size: 13px; margin-top: 12px; display: none; }
+  .result {
+    display: none;
+    background: #fff;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+    max-width: 640px;
+    width: 100%;
+    text-align: center;
+  }
+  .result h2 { color: #333; margin-bottom: 16px; }
+  .result img {
+    max-width: 100%;
+    border-radius: 10px;
+    border: 1px solid #eee;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  }
+  .result .placeholder {
+    padding: 60px 20px;
+    background: #f4f4f7;
+    border-radius: 10px;
+    color: #999;
+    font-size: 14px;
+    border: 2px dashed #ccc;
+  }
+  .logout-btn {
+    margin-top: 20px;
+    padding: 10px 22px;
+    border: none;
+    border-radius: 8px;
+    background: #eee;
+    color: #444;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  .logout-btn:hover { background: #e2e2e2; }
+</style>
+</head>
+<body>
+
+  <div class="card" id="loginCard">
+    <h1>Welcome Back</h1>
+    <p>Sign in to continue</p>
+    <form id="loginForm">
+      <div class="field">
+        <label for="username">Username</label>
+        <input type="text" id="username" placeholder="Enter username" required>
+      </div>
+      <div class="field">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter password" required>
+      </div>
+      <button type="submit" class="login-btn">Log In</button>
+      <div class="error-msg" id="errorMsg">Please enter both username and password.</div>
+    </form>
+  </div>
+
+  <div class="result" id="resultCard">
+    <h2>Login Successful ✅</h2>
+
+    <!-- Replace src with: https://raw.githubusercontent.com/<username>/<repo>/<branch>/<file-path> -->
+    <img
+      id="revealImage"
+      src="https://raw.githubusercontent.com/USERNAME/REPO/main/Screenshot%202026-07-08%20141917.png"
+      alt="Your image"
+      onerror="this.style.display='none'; document.getElementById('imgPla
